@@ -1,0 +1,49 @@
+table {
+  margin-bottom: 1.25em;
+  border: solid 1px #063a56;
+  border-collapse: collapse;
+}
+
+table thead, table tfoot {
+  background: #282A36;
+  font-weight: bold
+}
+
+table thead tr th, table thead tr td, table tfoot tr th, table tfoot tr td {
+  font-size: 0.95rem;
+  color: $light-color;
+  text-align: left
+}
+
+table tr th, table tr td {
+  padding: .4625em .525em;
+  font-size: inherit;
+  color: $light-color;
+}
+
+table tr td {
+  padding: 0 .525em;
+}
+
+table tr.even, table tr.alt, table tr:nth-of-type(even) {
+  background: #082b3f
+}
+
+table thead tr th, table tfoot tr th, table tbody tr td, table tr td, table tfoot tr td {
+  display: table-cell;
+  line-height: 1.6
+}
+
+.admonitionblock td.content > .title, .audioblock > .title, .exampleblock > .title, .imageblock > .title, .listingblock > .title, .literalblock > .title, .stemblock > .title, .openblock > .title, .paragraph > .title, .quoteblock > .title, table.tableblock > .title, .verseblock > .title, .videoblock > .title, .dlist > .title, .olist > .title, .ulist > .title, .qlist > .title, .hdlist > .title {
+  text-rendering: optimizeLegibility;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+table.spread {
+  width: 100%
+}
+
+td.content, p.tableblock {
+  font-size: 0.95rem
+}

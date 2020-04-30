@@ -8,22 +8,74 @@ html {
 
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family: "Open Sans";
   background: $dark-color;
   color: $light-color;
+}
+
+pre {
+  margin-top: 0;
+}
+
+.listingblock > .title {
+  color: $lightest-color;
+}
+
+code:not([class]) {
+  white-space: nowrap;
+  border: 1px solid #063a56;
+  border-radius: 4px;
+  background-color: #082b3f;
+  color: $lightest-color;
+  font-style: normal !important;
+  letter-spacing: 0;
+  padding: .1em .5ex;
+  font-weight: 200;
+  word-spacing: -.15em;
+}
+
+.conum {
+  color: black;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.8);
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+  text-align: center;
+  font-size: .75em;
+  width: 1.67em;
+  height: 1.67em;
+  line-height: 1.67em;
+  font-style: normal;
+  font-weight: bold;
+}
+
+b.conum > span.hljs-number {
+  color: #fff;
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: $lightest-color;
 }
 
-a {
+h1 {
+  font-family: Quicksand;
+  font-size: 2em;
+}
+
+.copyright {
+  margin-top: 0.5em;
+  text-align: center;
+  font-size: 0.7rem;
   color: $primary-color;
-  transition: color 0.35s;
+}
+
+a {
+  color: #E9F289;
+  transition: color 0.5s;
   text-decoration: none;
 
   &:hover {
-    color: $lightest-color;
+    color: $primary-color;
   }
 }
 
@@ -32,7 +84,7 @@ a {
 // small inline code-blocks in the middle of normal text (mainly because of
 // the very noticeable difference in x-height). This CSS corrects that problem.
 code {
-  font-family: monospace,monospace;
+  font-family: monospace, monospace;
   font-size: 1em;
   color: rgba($light-color, .8);
 }
@@ -44,12 +96,14 @@ pre {
   code {
     font-size: .8em;
   }
+
   overflow: auto;
 }
 
 ::selection {
   background: rgba($light-color, .25);
 }
+
 ::-moz-selection {
   background: rgba($light-color, .25);
 }

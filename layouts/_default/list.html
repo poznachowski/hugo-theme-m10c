@@ -1,17 +1,33 @@
 {{ define "main" }}
-  <article>
-    <h1>{{ .Title }}</h1>
-    <ul class="posts-list">
-      {{ range $index, $element := .Paginator.Pages }}
-        <li class="posts-list-item">
-          <a class="posts-list-item-title" href="{{ .Permalink }}">{{ .Title }}</a>
-          <span class="posts-list-item-description">
-            {{ partial "icon.html" (dict "ctx" $ "name" "clock") }} {{ .ReadingTime }} min read -
-            {{ .PublishDate.Format "Jan 2, 2006" }}
+<article>
+  <h1 class="title-list">{{ .Title }}</h1>
+  <ul class="posts-list">
+    {{ range $index, $element := .Paginator.Pages }}
+    <li class="posts-list-item">
+      <a class="posts-list-item-title" href="{{ .Permalink }}">{{ .Title }}</a>
+      <span class="posts-list-item-description">
+        <div class="item-details">
+          <span class="post-list-details-time">
+            {{ partial "icon.html" (dict "ctx" $ "name" "calendar") }} {{ .PublishDate.Format "Jan 01, 2006" }}
           </span>
-        </li>
-      {{ end }}
-    </ul>
-    {{ partial "pagination.html" $ }}
-  </article>
+          <span class="post-list-details-read">
+            {{ partial "icon.html" (dict "ctx" $ "name" "clock") }} {{ .ReadingTime }} min read
+          </span>
+        </div>
+          {{- with .Params.tags -}}
+        <span>
+          {{ partial "icon.html" (dict "ctx" $ "name" "tag") }}
+          {{ range . -}}
+            {{- with $.Site.GetPage (printf "/%s/%s" "tags" . ) -}}
+              <a class="tag" href="{{ .Permalink }}">{{ .Title }}</a>
+            {{- end -}}
+          {{- end -}}
+        </span>
+        {{- end -}}
+          </span>
+    </li>
+    {{ end }}
+  </ul>
+  {{ partial "pagination.html" $ }}
+</article>
 {{ end }}

@@ -5,6 +5,7 @@
 }
 
 .app-header-avatar {
+  //filter: brightness(70%);
   max-width: 15rem;
   max-height: 15rem;
   border-radius: 100%;
@@ -15,26 +16,101 @@
   padding: 2.5rem;
 }
 
-.app-header-social {
-  font-size: 2em;
-  color: $lightest-color;
+.grid-wrapper {
+  display: flex;
+  flex-direction: column;
+}
 
+.social {
+  text-align: center;
   a {
-    margin: 0 0.1em;
+    padding: 0 4px;
+    @include link-no-decoration();
+    color: $primary-color;
+
+    &:hover {
+      color: #E9F289;
+    }
+  }
+}
+
+.app-header h1 {
+  margin-bottom: 0px;
+}
+
+.app-header p {
+  margin: 0.5em 0 1.5em 0;
+}
+
+@media (max-width: 940px) {
+
+  .app-header {
+    padding: 1.5em 1em;
+  }
+
+  .app-header h1 {
+    margin-top: 0px;
+  }
+
+  h1 {
+    margin: 0.5em;
+  }
+
+  .flex-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .flex-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .app-header-avatar {
+    margin-right: 0.5em;
+    max-width: 5rem;
+    max-height: 5rem;
+    border-radius: 100%;
+    border: 0.1rem solid $primary-color;
+  }
+
+  .app-container {
+    padding: 0 2.5rem;
+  }
+
+  .title-list {
+    display: none;
+  }
+
+  .app-header p {
+    margin: 0.5em 0 0 0;
+  }
+
+  .footer-desktop {
+    display: none;
+  }
+  .footer-mobile {
+    padding: 1em 0;
+    background: $darkest-color;
   }
 }
 
 @media (min-width: 940px) {
+  .footer-mobile {
+    display: none;
+  }
+
   .app-header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 20rem;
+    width: 25rem;
     min-height: 100vh;
   }
 
   .app-container {
-    max-width: 65rem;
-    margin-left: 20rem;
+    max-width: 70rem;
+    margin-left: 25rem;
   }
 }

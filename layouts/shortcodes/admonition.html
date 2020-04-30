@@ -1,0 +1,19 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+{{ $type := .Get 0 }}
+<aside class="admonition">
+  <div class="admonition-bar {{ $type }}">
+    <i class="fas
+    {{ if (eq $type "warning") }}
+      fa-exclamation
+    {{ else if (eq $type "dont") }}
+    fa-times
+    {{ else if (eq $type "tip") }}
+    fa-lightbulb
+    {{ else if (eq $type "info") }}
+    fa-info
+    {{ end }}
+
+"></i>
+  </div>
+  <div class="admonition-content {{ $type }}">{{- .Inner -}}</div>
+</aside>

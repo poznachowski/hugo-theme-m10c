@@ -1,11 +1,14 @@
 .post-title {
   color: $lightest-color;
+  line-height: 1.1em;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .post-content {
   pre {
-    border-left: 0.4em solid rgba($primary-color, .8);
-    padding-left: 1em;
+    //border-left: 0.4em solid rgba($primary-color, .8);
+    //padding-left: 1em;
   }
   img {
     max-width: 100%;
