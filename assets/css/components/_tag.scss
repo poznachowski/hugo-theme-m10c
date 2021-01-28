@@ -6,11 +6,11 @@
   border-radius: 0.2em;
   white-space: nowrap;
   background: $primary-color;
-  color: $lightest-color;
-  transition: color 0.35s, background 0.35s;
+  color: $light-color;
+  transition: background 0.4s;
 
   &:hover {
-    transition: color 0.25s, background 0.05s;
+    transition: background 0.4s;
     color: $light-color;
     background: rgba(255, 255, 255, 0.3);
   }
