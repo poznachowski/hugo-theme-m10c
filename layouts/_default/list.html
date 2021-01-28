@@ -8,7 +8,7 @@
       <span class="posts-list-item-description">
         <div class="item-details">
           <span class="post-list-details-time">
-            {{ partial "icon.html" (dict "ctx" $ "name" "calendar") }} {{ .PublishDate.Format "Jan 01, 2006" }}
+            {{ partial "icon.html" (dict "ctx" $ "name" "calendar") }} {{ .PublishDate.Format "02.01.2006" }}
           </span>
           <span class="post-list-details-read">
             {{ partial "icon.html" (dict "ctx" $ "name" "clock") }} {{ .ReadingTime }} min read
